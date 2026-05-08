@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background-color: plum;
+            color: white;
+            font: normal 18pt Arial; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos de DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em Javascript.</p>
+    <div id="msg">Clique em mim!</div>
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[0] // Aqui eu estou criando uma váriavel que seleciona o primeiro parágrafo do meu texto, usamos o 0 para o primeiro parágrafo e 1 para o segundo
+        window.document.write(`Está escrito assim: ${p1.innerText}`) // Aqui eu estou usando um comando que manda escrever o texto dentro da váriavel criada ali em cima, ou seja, o texto do primeiro parágrafo. 
+
+        var p2 = window.document.getElementsByTagName('p')[1] // Aqui eu estou criando uma váriavel que seleciona o segundo parágrafo
+        p2.style.color = 'black' // Aqui eu estou mudando a cor do primeiro parágrafo 
+
+        var corpo = window.document.body // Criando uma váriavel para o corpo
+        corpo.style.background = 'pink' // Mudando a cor do corpo com essa váriavel. 
+        
+        window.document.write(p2.innerHTML) // Aqui eu estou fazendo o mesmo que o outro exemplo, mas com a formatação HTML completa, assim o DOM aparece em negrito.
+
+        window.alert(p2.innerText) // Aqui eu crio uma janela de aviso que copia o texto do segundo parágrafo, ou variável p2.
+
+        var d = window.document.getElementById('msg') // Criando uma varíavel para a div com o id "msg"
+        d.style.background = 'lightblue' // Mudando a cor de fundo da div
+        d.innerText = 'Estou aguardando.... ' // Assim eu forço o conteúdo da div a virar outra coisa
+
+        // o comando completo seria: window.document.getElementById('msg').innerText = 'Estou aguardando.... '
+
+        var d2 = window.document.querySelector('div#msg') // Criando uma variavél para fazer alterações usando seletores de CSS.
+
+        d2.style.color = 'purple' // Aplicando as alterações por meio da variável criada acima. 
+
+    </script>
+</body>
+</html>
