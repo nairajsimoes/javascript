@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            background-color: rgb(43, 248, 179);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()" >
+        Interaja...
+    </div>
+
+    <!-- 
+    Assim é como disparamos pelo próprio HTML... Para disparar os eventos pelo Javascript, podemos usar os Listeners
+     
+    Nesse caso, iríamos apagar todas esses métodos ali de cima que estão dentro da div e colocar assim, dentro do script, nas primeiras linhas:
+    
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+    Eu esolhi deixar o meu código rodando com os métodos no HTML.
+
+    OBS: Nesse exemplo também é usado uma variante só para todas as três funções, enquanto no código atual, preferi criar uma para cada.
+    -->
+
+    <script>
+
+        function clicar(){
+            var a = window.document.getElementById('area')
+            a.innerText = 'Clicou!'
+            a.style.background = 'red'
+        }
+        function entrar(){
+            var a = window.document.getElementById('area')
+            a.innerText = 'Entrou!'
+        }
+        function sair(){
+            var a = window.document.getElementById('area')
+            a.innerText = 'Saiu!'
+            a.style.background = 'rgb(43, 248, 179)'
+        }
+    </script>
+</body>
+</html>
